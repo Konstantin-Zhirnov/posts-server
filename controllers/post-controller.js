@@ -7,6 +7,7 @@ const handleError = (res, error) => {
 const getPosts = (req, res) => {
   Post
     .find()
+    .limit(req.query.limit)
     .then((posts) => {
       res
         .status(200)
